@@ -1,1 +1,3 @@
 language: C++
+
+install: ls -alF && gcc main.cc -o main
