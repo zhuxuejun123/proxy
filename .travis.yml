@@ -9,7 +9,8 @@ install:
     - cd ../../swxEmily/repo && git checkout && ls -alF
     - cd ../../ && ls -alF && cd swxEmily && ls -alF
     - cd proxy && ls -alF
-    - python --version
+    - python2 --version
+    - python3 --version
 
 script: 
     - g++ main.cc -o main && ./main
