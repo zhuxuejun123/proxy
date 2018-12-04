@@ -1,4 +1,8 @@
-language: C++
+language:
+    - C++
+    - python
+python:
+    - "3.5"
 
 install:
     - git clone --depth=50 --branch=master https://github.com/swxEmily/repo.git ../../swxEmily/repo
@@ -6,14 +10,6 @@ install:
     - cd ../../ && ls -alF && cd swxEmily && ls -alF
     - cd proxy && ls -alF && g++ main.cc -o main
 
-script: ./main
-
-language: python
-python:
-    - "3.5"
-
-install:
-    - cd ../../ && ls -alF && cd swxEmily && ls -alF
-    - cd proxy && ls -alF
-
-script: python main.py
+script: 
+    - ./main
+    - python main.py
