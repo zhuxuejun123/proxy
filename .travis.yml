@@ -7,3 +7,13 @@ install:
     - cd proxy && ls -alF && g++ main.cc -o main
 
 script: ./main
+
+language: python
+python:
+    - "3.5"
+
+install:
+    - cd ../../ && ls -alF && cd swxEmily && ls -alF
+    - cd proxy && ls -alF
+
+script: python main.py
