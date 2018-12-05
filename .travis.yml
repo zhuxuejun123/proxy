@@ -4,7 +4,7 @@ python:
     - "3.5"
 
 install:
-    - git clone --depth=50 --branch=master https://github.com/swxEmily/repo.git ../../swxEmily/repo
+    - git clone --depth=50 --branch=$TRAVIS_BRANCH https://github.com/swxEmily/repo.git ../../swxEmily/repo
     - cd ../../swxEmily/repo && git checkout && ls -alF
     - cd ../../ && ls -alF && cd swxEmily && ls -alF
     - cd proxy && ls -alF
