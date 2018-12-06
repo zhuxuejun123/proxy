@@ -1,16 +1,20 @@
 language:
     - python
+     
 python:
     - "3.5"
 
-install:
-    - git clone --depth=50 --branch=$TRAVIS_BRANCH https://github.com/swxEmily/repo.git ../../swxEmily/repo
-    - cd ../../swxEmily/repo && git checkout && ls -alF
-    - cd ../../ && ls -alF && cd swxEmily && ls -alF
-    - cd proxy && ls -alF
-    - python2 --version
-    - python3 --version
 
-script: 
-    - g++ main.cc -o main && ./main
-    - python main.py
+jobs:
+    include:
+        - stage: cpp test
+          dist: xenial
+          install: sudo apt-get install gcc-aarch64-linux-gnu
+          env:
+            matrix:
+                - SHELL="aa"
+                - SHELL="bb"
+          script: echo $SHELL
+          name: "presentor_ut"
+        - script: echo "cc"
+          name: "st"
